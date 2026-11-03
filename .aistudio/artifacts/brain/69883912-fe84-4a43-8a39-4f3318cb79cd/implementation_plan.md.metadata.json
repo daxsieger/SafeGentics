@@ -1,0 +1,6 @@
+{
+  "summary": "Detailed architectural blueprint and implementation plan for the local VS Code agent security architecture featuring declarative packages (.agentpkg), path-based Realms, tiered Net-Rings, an Ed25519 cryptographic gatekeeper, a network proxy simulator, and an interactive developer workbench.",
+  "updatedAt": "2026-11-03T17:44:51.489449796Z",
+  "requestFeedback": true,
+  "userFacing": true
+}

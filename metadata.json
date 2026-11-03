@@ -1,0 +1,6 @@
+{
+  "name": "Local Agent Security Architecture (VS Code)",
+  "description": "Local coding agent architecture for VS Code with declarative packages, Realms, Net-Rings, Ed25519 gatekeeper, and interactive workbench.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
