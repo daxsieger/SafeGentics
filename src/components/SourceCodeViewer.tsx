@@ -13,10 +13,11 @@ import {
   Key,
 } from 'lucide-react';
 import { DEFAULT_MANIFEST_YAML, DEFAULT_PUBLIC_KEY_PEM, DEFAULT_DETACHED_SIG_HEX } from '../security/default-data.ts';
+import { PROJECT_MASTER_DOCUMENT_CONTENT } from '../security/master-doc.ts';
 
 interface SourceFile {
   path: string;
-  category: 'manifest' | 'python' | 'typescript';
+  category: 'doc' | 'manifest' | 'python' | 'typescript';
   description: string;
   code: string;
 }
@@ -25,6 +26,12 @@ export const SourceCodeViewer: React.FC = () => {
   const [copied, setCopied] = useState<boolean>(false);
 
   const files: SourceFile[] = [
+    {
+      path: 'PROJECT_MASTER_DOCUMENT.md',
+      category: 'doc',
+      description: 'Documento Tecnico Aggregato & Regola Aurea di Governance del Progetto (Aggiornamento Continuo)',
+      code: PROJECT_MASTER_DOCUMENT_CONTENT,
+    },
     {
       path: 'agent-spec/agent-package.yaml',
       category: 'manifest',
@@ -384,7 +391,9 @@ export class NetRingGuard {
                 <div className="flex items-center gap-2">
                   <FileCode
                     className={`w-3.5 h-3.5 shrink-0 ${
-                      f.category === 'manifest'
+                      f.category === 'doc'
+                        ? 'text-purple-400'
+                        : f.category === 'manifest'
                         ? 'text-amber-400'
                         : f.category === 'python'
                         ? 'text-emerald-400'
